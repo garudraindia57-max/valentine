@@ -1,2 +1,98 @@
 # valentine
 Valentine surprise page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  font-family:Arial, sans-serif;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  width:320px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+img{
+  width:100%;
+  border-radius:15px;
+}
+
+h2{
+  color:#e60073;
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  cursor:pointer;
+  margin:10px;
+}
+
+#yes{
+  background:#ff4d6d;
+  color:white;
+}
+
+#no{
+  background:#ccc;
+  position:absolute;
+}
+
+#result{
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="question">
+  <img src="yes.jpg">
+  <h2>Sharaddha,<br>will you be my Valentine? 💖</h2>
+
+  <button id="yes" onclick="yesClick()">Yes 💕</button>
+  <button id="no" onmouseover="moveNo()">No 😏</button>
+</div>
+
+<div class="card" id="result">
+  <img src="ys.jpg">
+  <h2>Yayyy! ❤️</h2>
+  <p>
+    You just made me the happiest person.<br>
+    I can’t wait to celebrate Valentine’s Day with you 💕
+  </p>
+</div>
+
+<script>
+function moveNo(){
+  let x=Math.random()*(window.innerWidth-100);
+  let y=Math.random()*(window.innerHeight-50);
+  let no=document.getElementById("no");
+  no.style.left=x+"px";
+  no.style.top=y+"px";
+}
+
+function yesClick(){
+  document.getElementById("question").style.display="none";
+  document.getElementById("result").style.display="block";
+}
+</script>
+
+</body>
+</html>
